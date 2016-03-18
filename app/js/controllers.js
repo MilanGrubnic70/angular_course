@@ -15,4 +15,13 @@ angular.module('myApp.controllers', [])
         phone: '',
         size: ''
     };
+
+    $scope.saveParty = function() {
+        $scope.parties.push($scope.party);
+        $scope.party = {
+            name: '',
+            phone: '',
+            size: ''
+        };
+    };
 }]);
