@@ -17,7 +17,7 @@ config(['$routeProvider', function($routeProvider) {
     });
     $routeProvider.when('/waitlist', {
     	templateUrl: 'partials/waitlist.html',
-    	controller: 'WaitListController'
+    	controller: 'WaitlistController'
     });
     $routeProvider.otherwise({
         redirectTo: '/'
