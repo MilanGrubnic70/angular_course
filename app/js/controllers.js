@@ -7,6 +7,12 @@ angular.module('myApp.controllers', [])
 
     }])
 
-	.controller('WaitlistController', [function() {
+.controller('WaitlistController', ['$scope', function($scope) {
+    $scope.parties = [];
 
-	}]);
+    $scope.party = {
+        name: '',
+        phone: '',
+        size: ''
+    };
+}]);
