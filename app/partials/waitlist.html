@@ -1,15 +1,15 @@
 <form ng-submit="saveParty()" class="form-inline party-form">
     <div class="form-group">
         <label class="sr-only" for="partyName">Party name</label>
-        <input ng-model="party.name" type="text" class="form-control" id="partyName" placeholder="Name">
+        <input ng-model="newParty.name" type="text" class="form-control" id="partyName" placeholder="Name">
     </div>
     <div class="form-group">
         <label class="sr-only" for="phoneNumber">Phone number</label>
-        <input ng-model="party.phone" type="text" class="form-control" id="phoneNumber" placeholder="Phone">
+        <input ng-model="newParty.phone" type="text" class="form-control" id="phoneNumber" placeholder="Phone">
     </div>
     <div class="form-group">
         <label class="sr-only" for="sizeOfParty">Party size</label>
-        <input ng-model="party.size" type="text" class="form-control" id="sizeOfParty" placeholder="Party size">
+        <input ng-model="newParty.size" type="text" class="form-control" id="sizeOfParty" placeholder="Party size">
     </div>
     <button type="submit" class="btn btn-primary">Add party</button>
 </form>
@@ -28,7 +28,7 @@
         </td>
         <td>
             <div><strong>{{party.name}} (Party of {{party.size}})</strong></div>
-            <div>{{party.phone}} {{party.$id}}</div>
+            <div>{{party.phone}}</div>
             <div>
                 <!-- TODO: Add date created. -->
             </div>
