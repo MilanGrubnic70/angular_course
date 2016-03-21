@@ -18,7 +18,8 @@ angular.module('myApp.controllers', [])
         name: '',
         phone: '',
         size: '',
-        done: false
+        done: false,
+        notified: 'No'
     };
 
     // Function to save a new party to the waitlist.
