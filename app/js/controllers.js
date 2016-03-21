@@ -39,6 +39,6 @@ angular.module('myApp.controllers', [])
             size: party.size,
             name: party.name
         };
-        textMessages.$add({ phoneNumber: phoneNumber });
+        textMessages.$add({newTextMessage});
     };
-}])
+}]);
