@@ -9,7 +9,7 @@ angular.module('myApp.controllers', [])
 
 .controller('WaitlistController', ['$scope', '$firebase', function($scope, $firebase) {
 
-    var partiesRef = new Firebase('https://waitandeat-demo-ver1.firebaseio.com/');
+    var partiesRef = new Firebase('https://waitandeat-demo-ver1.firebaseio.com/parties');
 
     $scope.parties = $firebase(partiesRef);
 
@@ -34,5 +34,4 @@ angular.module('myApp.controllers', [])
         var textMessages = $firebase(textMessageRef);
         textMessages.$add({ phoneNumber: phoneNumber });
     };
-
-}]
+}])
