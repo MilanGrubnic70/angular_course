@@ -28,7 +28,8 @@ angular.module('myApp.controllers', [])
             name: '',
             phone: '',
             size: '',
-            done: false
+            done: false,
+            notified: 'No'
         };
     };
 
@@ -39,8 +40,11 @@ angular.module('myApp.controllers', [])
         var newTextMessage = {
             phoneNumber: party.phone,
             size: party.size,
-            name: party.name
+            name: party.name,
+            notified: 'No'
         };
         textMessages.$add(newTextMessage);
+        party.notified = 'Yes';
+        $scope.parties.$save(party.$id);
     };
 }]);
