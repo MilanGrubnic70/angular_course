@@ -17,7 +17,8 @@ angular.module('myApp.controllers', [])
     $scope.newParty = {
         name: '',
         phone: '',
-        size: ''
+        size: '',
+        done: false
     };
 
     // Function to save a new party to the waitlist.
@@ -26,7 +27,8 @@ angular.module('myApp.controllers', [])
         $scope.newParty = {
             name: '',
             phone: '',
-            size: ''
+            size: '',
+            done: false
         };
     };
 
