@@ -41,11 +41,10 @@ angular.module('myApp.controllers', [])
         var newTextMessage = {
             phoneNumber: party.phone,
             size: party.size,
-            name: party.name,
-            notified: 'No'
+            name: party.name
         };
         textMessages.$add(newTextMessage);
         party.notified = 'Yes';
         $scope.parties.$save(party.$id);
-    };
+        };
 }]);
