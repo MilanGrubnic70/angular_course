@@ -27,4 +27,12 @@ angular.module('myApp.controllers', [])
             size: ''
         };
     };
-}]);
+
+    // Function to sent a a text message
+    $scope.sendTextMessage = function(phoneNumber) {
+        var textMessageRef = new Firebase('http://waitandeat-demo-ver1.firebaseio.com/textMessages');
+        var textMessages = $firebase(textMessageRef);
+        textMessages.$add({ phoneNumber: phoneNumber });
+    };
+
+}]
