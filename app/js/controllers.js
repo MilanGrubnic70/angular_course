@@ -47,4 +47,16 @@ angular.module('myApp.controllers', [])
         party.notified = 'Yes';
         $scope.parties.$save(party.$id);
         };
-}]);
+}])
+
+.controller('AuthController', ['$scope', function($scope){
+    
+}])
+    
+
+
+
+
+
+
+;
