@@ -69,6 +69,6 @@ angular.module('myApp.controllers', [])
     };
     $scope.logout = function() {
         auth.$logout();
-        // redirect users to landing page
+        $location.path('/');
     };
 }]);
