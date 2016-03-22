@@ -49,7 +49,7 @@ angular.module('myApp.controllers', [])
     };
 }])
 
-.controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
+.controller('AuthController', ['$scope', '$firebaseSimpleLogin', '$location', function($scope, $firebaseSimpleLogin, $location) {
     var authRef = new Firebase('https://waitandeat-demo-ver1.firebaseio.com/');
     var auth = $firebaseSimpleLogin(authRef);
     $scope.user = { email: '', password: '' };
@@ -64,9 +64,11 @@ angular.module('myApp.controllers', [])
         auth.$login('password', $scope.user)
             .then(function(data) {
                 console.log(data);
+                $location.path('/waitlist');
             });
     };
     $scope.logout = function() {
         auth.$logout();
+        // redirect users to landing page
     };
 }]);
