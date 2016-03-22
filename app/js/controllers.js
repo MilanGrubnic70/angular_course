@@ -46,17 +46,18 @@ angular.module('myApp.controllers', [])
         textMessages.$add(newTextMessage);
         party.notified = 'Yes';
         $scope.parties.$save(party.$id);
-        };
+    };
 }])
 
-.controller('AuthController', ['$scope', function($scope){
-    
-}])
-    
+.controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
+    var authRef = new Firebase('https://waitandeat-demo-ver1.firebaseio.com/');
+    var auth = $firebaseSimpleLogin(authRef);
+    $scope.user = { email: '', password: '' };
+    $scope.register = function() {
+        auth.$createUser($scope.user.email, $scope.user.password)
+            .then(function(data) {
+                console.log(data);
+            });
 
-
-
-
-
-
-;
+    };
+}]);
