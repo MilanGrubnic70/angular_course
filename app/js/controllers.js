@@ -57,7 +57,7 @@ angular.module('myApp.controllers', [])
         auth.$createUser($scope.user.email, $scope.user.password)
             .then(function(data) {
                 console.log(data);
+                auth.$login('password', $scope.user);
             });
-
     };
 }]);
