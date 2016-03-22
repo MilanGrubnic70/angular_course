@@ -60,4 +60,10 @@ angular.module('myApp.controllers', [])
                 auth.$login('password', $scope.user);
             });
     };
+    $scope.login = function() {
+        auth.$login('password', $scope.user)
+            .then(function(data) {
+                console.log(data);
+            })
+    }
 }]);
