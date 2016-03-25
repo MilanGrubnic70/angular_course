@@ -35,11 +35,11 @@ angular.module('myApp.services', [])
             }
         };
 
-        $rootScope.$on("firebaseSimpleLogin:login", function (e, user) {
+        $rootScope.$on("$firebaseSimpleLogin:login", function (e, user) {
         	$rootScope.currentUser = user;
         });
 
-        $rootScope.$on("firebaseSimpleLogout:login", function () {
+        $rootScope.$on("$firebaseSimpleLogin:logout", function () {
         	$rootScope.currentUser = null;
         });
 
