@@ -58,6 +58,6 @@ angular.module('myApp.controllers', [])
         authService.login($scope.user);
     };
     $scope.logout = function() {
-        authService.login();
+        authService.logout();
     };
 }]);
