@@ -49,9 +49,7 @@ angular.module('myApp.controllers', [])
     };
 }])
 
-.controller('AuthController', ['$scope', '$firebaseSimpleLogin', '$location', 'FIREBASE_URL', 'authService', function($scope, $firebaseSimpleLogin, $location, FIREBASE_URL, authService) {
-    var authRef = new Firebase(FIREBASE_URL);
-    var auth = $firebaseSimpleLogin(authRef);
+.controller('AuthController', ['$scope', 'authService', function($scope, authService) {
     $scope.user = { email: '', password: '' };
     $scope.register = function() {
         auth.$createUser($scope.user.email, $scope.user.password)
