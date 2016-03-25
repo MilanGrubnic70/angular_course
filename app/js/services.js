@@ -34,5 +34,14 @@ angular.module('myApp.services', [])
        				 	$location.path('/');
             }
         };
+
+        $rootScope.$on("firebaseSimpleLogin:login", function (e, user) {
+        	$rootScope.currentUser = user;
+        });
+
+        $rootScope.$on("firebaseSimpleLogout:login", function () {
+        	$rootScope.currentUser = null;
+        });
+
         return authServiceObject;
        });
