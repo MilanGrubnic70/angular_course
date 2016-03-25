@@ -52,18 +52,18 @@ angular.module('myApp.controllers', [])
 .controller('AuthController', ['$scope', 'authService', function($scope, authService) {
     $scope.user = { email: '', password: '' };
     $scope.register = function() {
-        auth.$createUser($scope.user.email, $scope.user.password)
-            .then(function(data) {
-                console.log(data);
-                auth.$login('password', $scope.user);
-                $scope.login();
-            });
+        // auth.$createUser($scope.user.email, $scope.user.password)
+        //     .then(function(data) {
+        //         console.log(data);
+        //         auth.$login('password', $scope.user);
+        //         $scope.login();
+        //     });
     };
     $scope.login = function() {
         authService.login($scope.user);
     };
     $scope.logout = function() {
-        auth.$logout();
-        $location.path('/');
+        // auth.$logout();
+        // $location.path('/');
     };
 }]);
