@@ -30,9 +30,9 @@ angular.module('myApp.services', [])
     	return partyServiceObject;
 	})
 
-	.factory('textMessageService', function($firebase, FIREBASE_URL, partyService){
-		var textMessageRef = new Firebase(FIREBASE_URL + 'textMessages');
-        var textMessages = $firebase(textMessageRef);
+	.factory('textMessageService', function (dataService, partyService){
+
+        var textMessages = dataService.$child('textMessages');
 
         var textMessageObject = {
         	sendTextMessage: function (party) {
