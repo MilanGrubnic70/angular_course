@@ -10,6 +10,14 @@ angular.module('myApp.services', [])
     //     return 'https://waitandeat-demo-ver1.firebaseio.com/';
     // });
 
+	.factory('dataService', function ($firebase, FIREBASE_URL) {
+		var dataRef =  new Firebase(FIREBASE_URL);
+		var fireData = $firebase(dataRef);
+		
+		return fireData;
+	})
+
+
 	.factory('partyService', function($firebase, FIREBASE_URL){
 		var partiesRef = new Firebase(FIREBASE_URL + 'parties');
     	var parties = $firebase(partiesRef);
