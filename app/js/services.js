@@ -24,7 +24,6 @@ angular.module('myApp.services', [])
 
     	var partyServiceObject = {
     		saveParty: function (party, userId) {
-				parties.$add(party);
 				users.$child(userId).$child('parties').$add(party);
     		},
     		getPartiesByUserId: function (userId) {
