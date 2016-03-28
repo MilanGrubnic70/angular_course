@@ -39,7 +39,7 @@ angular.module('myApp.controllers', [])
 
     // Function to sent a a text message
     $scope.sendTextMessage = function(party) {
-        textMessageService.sendTextMessage(party);        
+        textMessageService.sendTextMessage(party, $scope.currentUser.id);        
     };
 }])
 
