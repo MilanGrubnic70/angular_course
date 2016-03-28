@@ -20,14 +20,15 @@ angular.module('myApp.services', [])
 
 	.factory('partyService', function(dataService){
 
-    	var parties = dataService.$child('parties');
     	var users = dataService.$child('users');
 
     	var partyServiceObject = {
-    		parties: parties,
     		saveParty: function (party, userId) {
 				parties.$add(party);
 				users.$child(userId).$child('parties').$add(party);
+    		},
+    		getPartiesByUserId: function (userId) {
+    			return users.$child(userId).$child('parties');
     		}
     	};
     	return partyServiceObject;
