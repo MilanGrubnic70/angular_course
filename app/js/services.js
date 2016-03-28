@@ -78,6 +78,10 @@ angular.module('myApp.services', [])
             logout: function () {
             	   		auth.$logout();
        				 	$location.path('/');
+            },
+
+            getCurrentUser: function () {
+            	return auth.$getCurrentUser();
             }
         };
 
