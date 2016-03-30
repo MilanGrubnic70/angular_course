@@ -66,7 +66,7 @@ angular.module('myApp.services', [])
         		auth.$createUser(user.email, user.password)
 		            .then(function(data) {
                 console.log(data);
-                emails.$add({email: user.email});
+                emails.$add({email: user.email});                                                   
                 authServiceObject.login(user);
             });
         	},
