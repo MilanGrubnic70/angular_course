@@ -75,7 +75,9 @@ angular.module('myApp.services', [])
                 auth.$login('password', user)
                     .then(function(data) {
                             console.log(data);
-                            optionalCallback();
+                            if (optionalCallback) {
+                                optionalCallback()
+                            }
                             $location.path('/waitlist');
                         });
                     },
