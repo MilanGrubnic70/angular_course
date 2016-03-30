@@ -66,14 +66,16 @@ angular.module('myApp.services', [])
         		auth.$createUser(user.email, user.password)
 		            .then(function(data) {
                 console.log(data);
-                emails.$add({email: user.email});                                                   
-                authServiceObject.login(user);
+                authServiceObject.login(user, function(){
+                    emails.$add({email: user.email});                                                   
+                });
             });
         	},
-            login: function(user) {
+            login: function(user, optionalCallback) {
                 auth.$login('password', user)
                     .then(function(data) {
                             console.log(data);
+                            optionalCallback();
                             $location.path('/waitlist');
                         });
                     },
