@@ -76,8 +76,8 @@ angular.module('myApp.services', [])
                     .then(function(data) {
                             console.log(data);
                             if (optionalCallback) {
-                                optionalCallback()
-                            }
+                                optionalCallback();
+                            };
                             $location.path('/waitlist');
                         });
                     },
